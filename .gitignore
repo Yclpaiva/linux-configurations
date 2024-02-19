@@ -1,0 +1,21 @@
+# Ignore all files
+/*
+
+# Include specific directories
+!.config/
+!.local/
+!install_basics.sh
+!.gitignore
+
+# Exclude everything in the included directories, except certain subdirectories
+.config/*
+.local/share/*
+.local/state
+
+!/.config/i3/
+!/.config/nvim/
+!/.config/tmux/*a
+!/.config/rofi/
+
+!/.local/share/fonts/
+!/.local/share/rofi/
