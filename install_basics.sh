@@ -1,27 +1,32 @@
 #!/bin/bash
 
-# Função para verificar se um programa está instalado
 is_installed() {
     command -v "$1" > /dev/null 2>&1
 }
-
-# Verificar se o Rofi está instalado
 if ! is_installed rofi; then
-    echo "Instalando Rofi..."
+    echo "Installing Rofi..."
     sudo apt-get update
     sudo apt-get install -y rofi
 else
-    echo "Rofi já está instalado."
+    echo "Rofi already installed"
 fi
 
-# Verificar se o i3 está instalado
 if ! is_installed i3; then
-    echo "Instalando i3..."
+    echo "Installing i3..."
     sudo apt-get update
     sudo apt-get install -y i3
 else
-    echo "i3 já está instalado."
+    echo "i3 already installed"
 fi
+
+if ! is_installed tmux; then
+    echo "Installing tmux..."
+    sudo apt-get update
+    sudo apt-get install -y tmux
+else
+    echo "tmux already installed."
+fi
+
 
 echo "Concluído."
 
